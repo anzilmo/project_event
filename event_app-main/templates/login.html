@@ -1,0 +1,130 @@
+<!-- templates/log.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <Style>
+        /* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #e08a8a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container Styles */
+.container {
+    max-width: 400px;
+    width: 100%;
+    padding: 20px;
+    background-color: #c7c6c6;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Title Styles */
+.container .title {
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Content Styles */
+.container .content {
+    width: 100%;
+}
+
+/* Form Styles */
+.container form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* User Details Styles */
+.container .user-details {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+/* Input Box Styles */
+.container .input-box {
+    margin-bottom: 15px;
+}
+
+.container .input-box label {
+    font-size: 1rem;
+    margin-bottom: 5px;
+    display: block;
+    color: #333;
+}
+
+.container .input-box input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #e19d9d;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+/* Button Styles */
+.container .button {
+    display: flex;
+    justify-content: center;
+}
+
+.container .button button {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: #e89b9b;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.container .button button:hover {
+    background-color: #0056b3;
+}
+
+    </Style>
+    <div class="container">
+        <div class="title">Login</div>
+        <div class="content">
+            <form action="{% url 'login' %}" method="post">
+                {% csrf_token %}
+                <div class="user-details">
+                    <div class="input-box">
+                        <label>User Name: </label>
+                        <input type="text" name="username" required>
+                    </div>
+                    <div class="input-box">
+                        <label>Password: </label>
+                        <input type="password" name="password" required>
+                    </div>
+                </div>
+                <div class="button">
+                    <button type="submit">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

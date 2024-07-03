@@ -1,0 +1,173 @@
+{% extends 'base.html' %}
+{%load static %}
+{%block title%}
+Event
+{% endblock %}
+
+        {%block content%}
+        <h2 class="text-center">Events</h2>
+   <div class="container">
+        {% for i in eve %}
+        <div class="card" style="width: 13rem;display:inline-block;margin: 50px;">
+                <img src="{{i.img.url}}" class="card-img-top" alt="..." height="300px" width="200px">
+                <div class="card-body">
+                  <h5 class="card-title">{{i.name}}</h5>
+                  <p class="card-text"> {{i.desc}}</p>
+                </div>
+              </div>
+              {% endfor %}
+              <!-- <div class="card" style="width: 18rem;">
+                <img src="{% static 'image/se.jpeg' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Best option for your Events......! join with us...</a>
+                </div>
+              </div>
+              <div class="card" style="width: 18rem;">
+                <img src="{% static 'image/se.jpeg' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Best option for your Events......! join with us...</a>
+                </div>
+              </div> -->
+
+
+
+   </div>
+   <Style>
+    /* General Footer Styles */
+.footer-section {
+    background-color: #2d2a2a; /* Dark background color */
+    padding: 60px 0; /* Padding for top and bottom */
+    color: #fff; /* White text color */
+    font-family: Arial, sans-serif; /* Font family */
+}
+
+.footer-section .container {
+    display: flex; /* Flexbox for container */
+    flex-direction: column; /* Column direction */
+    align-items: center; /* Center align items */
+}
+
+.footer-text {
+    text-align: center; /* Center text */
+}
+
+.ft-logo {
+    margin-bottom: 20px; /* Margin below the logo */
+}
+
+.ft-logo img {
+    max-width: 150px; /* Max width for the logo */
+}
+
+.footer-text ul {
+    list-style: none; /* Remove list style */
+    padding: 0; /* Remove padding */
+    margin: 0 0 20px; /* Margin bottom */
+    display: flex; /* Flexbox for list */
+    justify-content: center; /* Center list items */
+    flex-wrap: wrap; /* Wrap items if necessary */
+}
+
+.footer-text ul li {
+    margin: 0 15px; /* Margin for list items */
+}
+
+.footer-text ul li a {
+    color: #fff; /* White text color */
+    text-decoration: none; /* Remove underline */
+    font-size: 14px; /* Font size */
+    transition: color 0.3s; /* Transition for color change */
+}
+
+.footer-text ul li a:hover {
+    color: #ff6b6b; /* Hover color */
+}
+
+.copyright-text {
+    margin-top: 20px; /* Margin top */
+    font-size: 14px; /* Font size */
+    color: #777; /* Light grey color */
+}
+
+.ft-social {
+    margin-top: 20px; /* Margin top */
+}
+
+.ft-social a {
+    color: #fff; /* White color for icons */
+    font-size: 20px; /* Font size */
+    margin: 0 10px; /* Margin for icons */
+    display: inline-block; /* Inline block for icons */
+    transition: color 0.3s; /* Transition for color change */
+}
+
+.ft-social a:hover {
+    color: #e49191; /* Hover color */
+}
+
+/* Partner Logo Carousel Styles */
+.partner-logo.owl-carousel {
+    display: flex; /* Flexbox for partner logos */
+    justify-content: center; /* Center logos */
+    margin-bottom: 20px; /* Margin bottom */
+}
+
+.pl-table {
+    display: table; /* Table display for partner logos */
+}
+
+.pl-tablecell {
+    display: table-cell; /* Table cell display */
+    vertical-align: middle; /* Vertical align middle */
+}
+</style>
+   <footer class="footer-section">
+    <div class="container">
+        <div class="partner-logo owl-carousel">
+            <a href="#" class="pl-table">
+                <div class="pl-tablecell">
+                    <!-- Partner logo content can be added here -->
+                </div>
+            </a>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="footer-text">
+                    <div class="ft-logo">
+                        <!-- <a href="#" class="footer-logo"><img src="...." alt="Footer Logo"></a> -->
+                    </div>
+                    <ul>
+                        <li><a href="{% url 'Home'%}">Home</a></li> <!-- Corrected URL name -->
+                        <li><a href="{% url 'about'%}">About</a></li>
+                        <li><a href="{% url 'eventes'%}">Events</a></li> <!-- Corrected URL name -->
+                        <li><a href="{% url 'booking' %}">Booking</a></li>
+                        <li><a href="{% url 'contact' %}">Contact</a></li>
+                    </ul>
+                    <div class="copyright-text">
+                        <p>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            <script>document.write(new Date().getFullYear());</script> Event Management | This is made with 
+                            <i class="fa fa-heart" aria-hidden="true"></i> by
+                            <a href="#" target="_blank">anzilmo0</a>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        </p>
+                    </div>
+                    <div class="ft-social">
+                        <a href="mailto:anzilmo15@gmail.com"><i class="fas fa-envelope"></i></a>
+                        <a href="https://github.com/anzil_mo" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/anzil_mo" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com/anzilmo0" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="tel:+919072454194"><i class="fas fa-phone"></i> +91 9072454194</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+     {% endblock %}
